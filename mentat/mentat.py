@@ -1,18 +1,16 @@
-import cmd
+import subprocess, os, pty, sys
 
-class MentatShell(cmd.Cmd):
-    """
-    This one literally interprets any command input and parses it to a funciton.
-    You would have to make thousands of functions for this to work, or
-    auto-generate functions. Either way, this doesnt seem to be working.
-    """
 
-    intro = "Mentat"
-    prompt = "m> "
-    file = None
+class MentatShell:
 
-    def do_potato(self, arg):
-        print("Potato!")
+    def __init__(self):
+        shell = os.environ.get("SHELL", "sh")
+        self.pty = pty.spawn(shell, self.read)
+
+    def read(self, fd):
+        data = os.read(fd, 1024)
+        return data
+    
 
 if __name__ == "__main__":
-    MentatShell().cmdloop()
+    a = MentatShell()
