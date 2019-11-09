@@ -1,5 +1,7 @@
 import subprocess, os
 
+from mentat import MentatShell
+
 shell = os.environ.get("SHELL", "sh")
 
 def proc_loop(command):
