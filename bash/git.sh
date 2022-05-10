@@ -12,6 +12,9 @@ g () {
 			d)
 				git diff
 				;;
+			s)
+				git status
+				;;
 			*)
 				echo "Unknown command."
 				;;
