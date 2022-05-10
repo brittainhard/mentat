@@ -1,5 +1,5 @@
-source tmux.sh
+source workon.sh
 
 msource () {
-        source $MENTATPATH
+        source mentat.sh
 }
