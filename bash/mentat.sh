@@ -16,3 +16,7 @@ mdev () {
         cd ~/github/mentat/bash
         open_tmux "mentat"
 }
+
+msource () {
+        source $MENTATPATH
+}
