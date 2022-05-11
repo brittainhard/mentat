@@ -14,6 +14,21 @@ list_commands () {
 	done
 }
 
+is_value () {
+	local -n arg1=$1
+	if [ ${arg1[$2]} ]
+	then
+		return 0
+	else
+		return 1
+	fi
+}
+
 m () {
-	${commands[$1]}
+	local COMMAND=""
+	local -n arg=${commands[$1]}
+	COMMAND+=" ${commands[$1]}"
+	COMMAND+=" ${arg[$2]}"
+	echo $COMMAND
+	${COMMAND}
 }

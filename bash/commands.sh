@@ -5,3 +5,8 @@ declare -A -g commands
 
 commands[g]=git
 commands[p]=ipython
+
+declare -A -g git
+
+git[p]=push
+git[s]=status
