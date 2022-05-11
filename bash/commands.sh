@@ -4,4 +4,4 @@ declare -A -g commands
 # biggie.
 
 commands[g]=git
-commands[p]=python
+commands[p]=ipython

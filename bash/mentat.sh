@@ -7,8 +7,13 @@ msource () {
 }
 
 list_commands () {
-	for key in "${!commands[@]}"
+	local -n arg=$1
+	for key in "${!arg[@]}"
 	do
-		echo "$key -> ${commands[$key]}"
+		echo "$key -> ${arg[$key]}"
 	done
+}
+
+m () {
+	${commands[$1]}
 }
